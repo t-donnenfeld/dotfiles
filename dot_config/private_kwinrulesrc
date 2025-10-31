@@ -1,0 +1,11 @@
+[General]
+count=1
+rules=c027cb83-531e-476d-81f7-a9e2448a5f88
+
+[c027cb83-531e-476d-81f7-a9e2448a5f88]
+Description=Open Applications Fullscreen
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+types=1
