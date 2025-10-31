@@ -1,6 +1,7 @@
 [ActivityManager]
 _k_friendly_name=Gestion des activités
 switch-to-activity-a3b5af1f-2b89-4037-b964-9cb61a555310=none,none,Passer à l'activité « Défaut »
+switch-to-activity-c1b34fd1-a60d-44e9-9e19-cf0ed9c1ece4=none,none,Passer à l'activité « Défaut »
 
 [KDE Keyboard Layout Switcher]
 Switch to Last-Used Keyboard Layout=none,none,Basculer vers la dernière disposition de clavier

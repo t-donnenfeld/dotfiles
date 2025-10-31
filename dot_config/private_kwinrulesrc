@@ -1,11 +1,13 @@
 [General]
 count=1
-rules=c027cb83-531e-476d-81f7-a9e2448a5f88
+rules=f7dc1d68-a1d0-46a4-b88d-6d23c7ef90ae
 
-[c027cb83-531e-476d-81f7-a9e2448a5f88]
-Description=Open Applications Fullscreen
+[f7dc1d68-a1d0-46a4-b88d-6d23c7ef90ae]
+Description=Paramètres d'application pour « Alacritty »
+clientmachine=localhost
 maximizehoriz=true
 maximizehorizrule=3
 maximizevert=true
 maximizevertrule=3
-types=1
+wmclass=Alacritty
+wmclassmatch=1
