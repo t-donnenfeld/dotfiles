@@ -1,0 +1,48 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+#base="#1e1e2e"
+#text="#cdd6f4"
+#green="#a6e3a1"
+#blue="#89b4fa"
+#mauve="#cba6f7"
+#red="#f38ba8"
+#yellow="#f9e2af"
+
+# Prompt styling
+# [user@host:cwd] → with colors
+PS1="\[\e[38;5;141m\]\u\[\e[0m\]@\[\e[38;5;111m\]\h\[\e[0m\]:\[\e[38;5;150m\]\w\[\e[0m\] \$ "
+
+# Aliases
+alias ls='ls --color=auto'
+alias ll='ls -lah'
+alias grep='grep --color=auto'
+alias cat='batcat --theme="Catppuccin Mocha" 2>/dev/null || cat'
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias more=less
+alias l=ls
+
+# PATH additions
+export PATH="$HOME/.local/bin:$PATH"
+
+# Catppuccin accent for less
+export LESS_TERMCAP_mb=$'\E[01;35m'  # blink
+export LESS_TERMCAP_md=$'\E[01;34m'  # bold
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[48;5;238;38;5;223m'  # standout
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'  # underline
+
+# Load bash completion if available
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+

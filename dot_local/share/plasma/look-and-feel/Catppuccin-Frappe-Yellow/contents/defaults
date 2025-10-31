@@ -1,0 +1,17 @@
+[kdeglobals][General]
+ColorScheme=CatppuccinFrappeYellow
+
+[kcminputrc][Mouse]
+cursorTheme=Catppuccin-Frappe-Yellow-Cursors
+
+[kwinrc][org.kde.kdecoration2]
+ButtonsOnLeft=
+ButtonsOnRight=IAX
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__CatppuccinFrappe-Modern
+
+[plasmarc][Theme]
+name=default
+
+[KSplash]
+Theme=Catppuccin-Frappe-Yellow-splash
