@@ -2,6 +2,11 @@
 a3b5af1f-2b89-4037-b964-9cb61a555310=8cc3ba48-1723-4e5b-b727-e04043d083db
 c1b34fd1-a60d-44e9-9e19-cf0ed9c1ece4=8cc3ba48-1723-4e5b-b727-e04043d083db
 
+[Compositing]
+GLCore=true
+GLPreferBufferSwap=2
+MaxFPS=144
+
 [Desktops]
 Id_1=f1c14706-8ed1-4ee1-9723-155496c03697
 Id_2=061b6cd1-d104-42be-90f0-95a5fe97efcd
@@ -25,6 +30,9 @@ padding=4
 [Tiling][1cae15a4-4f15-54a4-aaef-5a513f7bc10f]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][37dbdc78-5abd-512c-9af2-f39173138c85]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][3dbb1d9d-8131-5a3c-aa13-d08c9174e025]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
@@ -35,6 +43,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][aefcdf17-aa07-5159-8d2f-55fc8fa5edf5]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][d13db998-08c3-5279-84a5-22f5084eef5d]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][d909dac2-feb6-5238-a895-d844ddb21ad4]

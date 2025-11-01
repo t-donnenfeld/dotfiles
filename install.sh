@@ -1,7 +1,8 @@
 #!/bin/bash
 
 sudo pacman -Syu
-sudo pacman -S git unzip ttf-jetbrains-mono-nerd vim bash
+sudo pacman -S git unzip ttf-jetbrains-mono-nerd vim bash bitwarden-cli jq
+sudo pacman -S discord element
 
 chsh -s /bin/bash
 
