@@ -61,7 +61,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 SystrayContainmentId=9
 
 [Containments][2][General]
@@ -111,6 +111,9 @@ plugin=org.kde.plasma.clipboard
 [Containments][9][Applets][14]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
+
+[Containments][9][Applets][14][Configuration]
+PreloadWeight=60
 
 [Containments][9][Applets][15]
 immutability=1

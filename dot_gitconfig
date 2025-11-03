@@ -1,3 +1,6 @@
 [user]
     name = Théotime Donnenfeld
     email = tdonnenfeld@gmail.com
+
+[pull]
+    rebase = true
