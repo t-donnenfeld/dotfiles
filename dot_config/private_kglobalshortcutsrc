@@ -262,4 +262,4 @@ toggle do not disturb=none,,Basculer « Ne pas déranger »
 _launch=Alt+Return
 
 [services][org.kde.krunner.desktop]
-_launch=Alt+D\tSearch\tAlt+Space\tAlt+F2
+_launch=Alt+X\tSearch\tAlt+Space\tAlt+F2

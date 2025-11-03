@@ -1,1 +1,3 @@
 .config/kscreenlockerrc
+dot_config/nvim/lazy-lock.json
+README.md

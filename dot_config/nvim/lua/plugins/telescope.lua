@@ -32,6 +32,7 @@ return {
   config = function()
     require("telescope").setup({
       defaults = {
+        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
         layout_strategy = "flex",
         sorting_strategy = "ascending",
         prompt_prefix = "🔍 ",
