@@ -1,7 +1,7 @@
 return {
   {
   "nvim-telescope/telescope-file-browser.nvim",
-  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"  },
   config = function()
     local telescope = require("telescope")
     telescope.setup({
@@ -22,7 +22,7 @@ return {
 },
   {
   "nvim-telescope/telescope.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = { "nvim-lua/plenary.nvim", "akinsho/toggleterm.nvim"  },
   keys = {
     { "<leader><leader>", "<cmd>Telescope find_files<CR>", desc = "Find files" },
     { "<leader>fg", "<cmd>Telescope live_grep<CR>",  desc = "Live grep" },
