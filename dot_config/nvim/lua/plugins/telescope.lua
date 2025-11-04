@@ -28,6 +28,17 @@ return {
     { "<leader>fg", "<cmd>Telescope live_grep<CR>",  desc = "Live grep" },
     { "<leader>fb", "<cmd>Telescope buffers<CR>",    desc = "Find buffers" },
     { "<leader>fh", "<cmd>Telescope help_tags<CR>",  desc = "Help tags" },
+    {
+      "<leader>fc",
+      function()
+        require("telescope.builtin").find_files({
+          prompt_title = "  Neovim Config",
+          cwd = vim.fn.stdpath("config"),
+          hidden = true,
+        })
+      end,
+      desc = "Browse nvim config with Telescope",
+    }
   },
   config = function()
     require("telescope").setup({
@@ -36,7 +47,7 @@ return {
         layout_strategy = "flex",
         sorting_strategy = "ascending",
         prompt_prefix = "🔍 ",
-      },
+      }
     })
   end,
 }

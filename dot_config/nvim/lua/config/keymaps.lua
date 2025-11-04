@@ -1,6 +1,11 @@
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true, desc = "Buffer" }
 
+
+-- Folds
+vim.opt.foldmethod = "manual"
+vim.opt.foldexpr = ""
+
 -- Style
 vim.opt.fillchars = { vert = "│", horiz = "─", eob = " " }
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
