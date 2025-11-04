@@ -5,8 +5,8 @@ RightButton;NoModifier=org.kde.contextmenu
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=/home/theo/.local/share/wallpapers/wallpaper.png
-PreviewImage=/home/theo/.local/share/wallpapers/wallpaper.png
+Image=/home/theo/.local/share/wallpapers/shaded_landscape.png
+PreviewImage=/home/theo/.local/share/wallpapers/shaded_landscape.png
 SlidePaths=/home/theo/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][2]
