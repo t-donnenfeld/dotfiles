@@ -4,6 +4,11 @@ RightButton;NoModifier=org.kde.contextmenu
 [ActionPlugins][1]
 RightButton;NoModifier=org.kde.contextmenu
 
+[Containments][1][Wallpaper][org.kde.image][General]
+Image=/home/theo/.local/share/wallpapers/wallpaper.png
+PreviewImage=/home/theo/.local/share/wallpapers/wallpaper.png
+SlidePaths=/home/theo/.local/share/wallpapers/,/usr/share/wallpapers/
+
 [Containments][2]
 activityId=
 floatingPanel=false
