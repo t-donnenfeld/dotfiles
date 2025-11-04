@@ -23,6 +23,11 @@ wallpaperplugin=org.kde.image
 immutability=1
 plugin=org.kde.plasma.digitalclock
 
+[Containments][2][Applets][21][Configuration]
+PreloadWeight=55
+popupHeight=450
+popupWidth=560
+
 [Containments][2][Applets][21][Configuration][Appearance]
 fontWeight=400
 
@@ -32,8 +37,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=556
-popupWidth=725
+popupHeight=560
+popupWidth=729
 
 [Containments][2][Applets][3][Configuration][General]
 favorites=preferred://browser,org.kde.dolphin.desktop,org.kde.elisa.desktop,org.kde.konsole.desktop,org.manjaro.pamac.manager.desktop,systemsettings.desktop
@@ -66,7 +71,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 SystrayContainmentId=9
 
 [Containments][2][General]
@@ -86,6 +91,10 @@ wallpaperplugin=org.kde.image
 [Containments][22][General]
 positions={"1680x1050":[]}
 
+[Containments][22][Wallpaper][org.kde.image][General]
+Image=/home/theo/.local/share/wallpapers/shaded_landscape.png
+PreviewImage=/home/theo/.local/share/wallpapers/shaded_landscape.png
+
 [Containments][9]
 activityId=
 formfactor=2
@@ -93,8 +102,8 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=432
-popupWidth=432
+popupHeight=436
+popupWidth=436
 wallpaperplugin=org.kde.image
 
 [Containments][9][Applets][10]
@@ -145,7 +154,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][9][Applets][20][Configuration]
-PreloadWeight=70
+PreloadWeight=75
 
 [Containments][9][Applets][20][Configuration][General]
 migrated=true
@@ -166,9 +175,15 @@ plugin=org.kde.plasma.bluetooth
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
+[Containments][9][Applets][25][Configuration]
+PreloadWeight=65
+
 [Containments][9][Applets][26]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
+
+[Containments][9][Applets][26][Configuration]
+PreloadWeight=42
 
 [Containments][9][General]
 extraItems=org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.volume
