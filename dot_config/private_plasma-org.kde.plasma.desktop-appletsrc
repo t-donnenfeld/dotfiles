@@ -37,8 +37,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=560
-popupWidth=729
+popupHeight=572
+popupWidth=741
 
 [Containments][2][Applets][3][Configuration][General]
 favorites=preferred://browser,org.kde.dolphin.desktop,org.kde.elisa.desktop,org.kde.konsole.desktop,org.manjaro.pamac.manager.desktop,systemsettings.desktop
@@ -77,10 +77,10 @@ SystrayContainmentId=9
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;8;21
 
-[Containments][22]
-ItemGeometries-1680x1050=
+[Containments][23]
+ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
-activityId=a3b5af1f-2b89-4037-b964-9cb61a555310
+activityId=c1b34fd1-a60d-44e9-9e19-cf0ed9c1ece4
 formfactor=0
 immutability=1
 lastScreen=0
@@ -88,12 +88,8 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][22][General]
-positions={"1680x1050":[]}
-
-[Containments][22][Wallpaper][org.kde.image][General]
-Image=/home/theo/.local/share/wallpapers/shaded_landscape.png
-PreviewImage=/home/theo/.local/share/wallpapers/shaded_landscape.png
+[Containments][23][General]
+positions={"1920x1080":[]}
 
 [Containments][9]
 activityId=

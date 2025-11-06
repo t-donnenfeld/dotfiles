@@ -1,4 +1,4 @@
-return {{
+return { {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
@@ -31,19 +31,22 @@ return {{
     opts = { options = { theme = "catppuccin" } },
   },
   {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-  },
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      notify = {
+        enabled = false,
+      }
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     }
-},
+  },
   {
-  "folke/todo-comments.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  opts = {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+    }
   }
-}
 }

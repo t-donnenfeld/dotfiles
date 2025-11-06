@@ -30,4 +30,3 @@ mason_lspconfig.setup({
     end,
   },
 })
-
