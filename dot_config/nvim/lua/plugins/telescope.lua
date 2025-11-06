@@ -32,7 +32,7 @@ return {
         end,
         desc = "File browser (NVIM config directory)",
       },
-      { "<leader>em", "<cmd>Telescope file_browser path=/home/theo/.local/share/chezmoi select_buffer=true<CR>", desc = "File browser (current file dir)" },
+      { "<leader>em", "<cmd>Telescope file_browser path=/home/theo/.local/share/chezmoi select_buffer=true<CR>", desc = "File browser (Chezmoi Git Repo)" },
     },
     config = function()
       local actions = require("telescope.actions")
