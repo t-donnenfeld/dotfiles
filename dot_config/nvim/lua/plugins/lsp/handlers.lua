@@ -5,6 +5,7 @@ function M.on_attach(client, bufnr)
     vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
   end
 
+  vim.notify("loaded handlers")
   -- LSP navigation
   map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
   map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")

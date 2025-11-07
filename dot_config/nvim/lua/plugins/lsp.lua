@@ -1,20 +1,14 @@
 return {
   {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
-    config = true,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "neovim/nvim-lspconfig" },
-    config = function()
-      require("plugins.lsp.mason")
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
-    dependencies = { "hrsh7th/cmp-nvim-lsp" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+    },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
+      require("mason").setup()
       require("plugins.lsp.servers")
     end,
   },

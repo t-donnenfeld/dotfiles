@@ -14,7 +14,7 @@ return {
   opts = {
     preset = "helix",
     spec = {
-      { "<leader>f", group = "+file" },
+      { "<leader>f", group = "+find" },
       { "<leader>e", group = "+explore" },
       { "<leader>g", group = "+git" },
       { "<leader>d", group = "+debug" },

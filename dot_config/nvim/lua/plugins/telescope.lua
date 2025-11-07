@@ -9,6 +9,7 @@ return {
       { "<leader>fg",       "<cmd>Telescope live_grep<CR>",  desc = "Live grep" },
       { "<leader>fb",       "<cmd>Telescope buffers<CR>",    desc = "Find buffers" },
       { "<leader>fh",       "<cmd>Telescope help_tags<CR>",  desc = "Help tags" },
+      { "<leader>fn",       "<cmd>Telescope notify<CR>",     desc = "Find Notifications" },
       {
         "<leader>fc",
         function()

@@ -6,6 +6,17 @@ return {
     "nvim-neotest/nvim-nio",
     "mfussenegger/nvim-dap-python"
   },
+  keys = {
+    { "<F5>",       function() require("dap").continue() end,          desc = "DAP: Start / Continue" },
+    { "<F10>",      function() require("dap").step_over() end,         desc = "DAP: Step Over" },
+    { "<F11>",      function() require("dap").step_into() end,         desc = "DAP: Step Into" },
+    { "<F12>",      function() require("dap").step_out() end,          desc = "DAP: Step Out" },
+
+    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "DAP: Toggle Breakpoint" },
+    { "<leader>dr", function() require("dap").repl.open() end,         desc = "DAP: Open REPL" },
+    { "<leader>dC", function() require("dap").run_to_cursor() end,     desc = "DAP: Run to Cursor" },
+    { "<leader>du", function() require("dapui").toggle() end,          desc = "DAP: Toggle UI" }
+  },
   config = function()
     local dap = require("dap")
     local dapui = require("dapui")
@@ -64,11 +75,9 @@ return {
       dapui.open()
     end
     dap.listeners.before.event_terminated["dapui_config"] = function()
-      dapui.close()
+      vim.notify("🪲 Debug session ended — UI left open", vim.log.levels.INFO)
     end
-    dap.listeners.before.event_exited["dapui_config"] = function()
-      dapui.close()
-    end
+    dap.listeners.before.event_exited["dapui_config"] = nil
 
     local lang_dir = vim.fn.stdpath("config") .. "/lua/plugins/dap/languages"
     for _, file in ipairs(vim.fn.readdir(lang_dir)) do
@@ -78,12 +87,52 @@ return {
       end
     end
 
-    local map = vim.keymap.set
-    map("n", "<F5>", dap.continue, { desc = "Start/Continue" })
-    map("n", "<F10>", dap.step_over, { desc = "Step Over" })
-    map("n", "<F11>", dap.step_into, { desc = "Step Into" })
-    map("n", "<F12>", dap.step_out, { desc = "Step Out" })
-    map("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
-    map("n", "<leader>dr", dap.repl.open, { desc = "Open REPL" })
+    local function start_and_run_to_cursor()
+      if not dap.session() then
+        vim.notify("🐞 Starting debug session...", vim.log.levels.INFO)
+        dap.continue()
+        vim.defer_fn(function()
+          dap.run_to_cursor()
+        end, 300)
+      else
+        dap.run_to_cursor()
+      end
+    end
+
+    -- Better, more visible icons for breakpoints and DAP state
+    vim.fn.sign_define("DapBreakpoint", {
+      text = "🔴",
+      texthl = "DiagnosticError",
+      linehl = "",
+      numhl = "",
+    })
+
+    vim.fn.sign_define("DapBreakpointCondition", {
+      text = "❓", -- question mark icon for conditional breakpoints
+      texthl = "DiagnosticWarn",
+      linehl = "",
+      numhl = "",
+    })
+
+    vim.fn.sign_define("DapBreakpointRejected", {
+      text = "❌", -- red X
+      texthl = "DiagnosticError",
+      linehl = "",
+      numhl = "",
+    })
+
+    vim.fn.sign_define("DapLogPoint", {
+      text = "", -- log icon
+      texthl = "DiagnosticInfo",
+      linehl = "",
+      numhl = "",
+    })
+
+    vim.fn.sign_define("DapStopped", {
+      text = "", -- arrow
+      texthl = "DiagnosticHint",
+      linehl = "Visual",
+      numhl = "",
+    })
   end,
 }
