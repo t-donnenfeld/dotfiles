@@ -1,6 +1,7 @@
 return {
   "yetone/avante.nvim",
   lazy = true,
+  build = "make",
   version = false,
   opts = {
     instructions_file = "avante.md",

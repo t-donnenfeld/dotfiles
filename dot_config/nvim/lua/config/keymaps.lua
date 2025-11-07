@@ -24,13 +24,13 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-Up>",    ":resize -2<CR>", opts)
-map("n", "<C-Down>",  ":resize +2<CR>", opts)
-map("n", "<C-Left>",  ":vertical resize -2<CR>", opts)
+map("n", "<C-Up>", ":resize -2<CR>", opts)
+map("n", "<C-Down>", ":resize +2<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 map("n", "<leader>sv", ":vsplit<CR>", { desc = "Vertical split" })
-map("n", "<leader>sh", ":split<CR>",  { desc = "Horizontal split" })
+map("n", "<leader>sh", ":split<CR>", { desc = "Horizontal split" })
 map("n", "<leader>so", ":only<CR>", { desc = "Close other splits" })
 
 -- Highlights
@@ -45,3 +45,9 @@ map('t', '<C-l>', [[<Cmd>wincmd l<CR>]], { desc = 'Go to right window' })
 vim.keymap.set("t", "<C-l>", function()
   vim.api.nvim_feedkeys("clear" .. vim.api.nvim_replace_termcodes("<CR>", true, false, true), "t", false)
 end, { desc = "Clear terminal screen" })
+
+-- CWD
+
+vim.keymap.set("n", "<leader>wd", ":cd %:p:h<CR>:pwd<CR>", {
+  desc = "Change CWD to current file's directory",
+})

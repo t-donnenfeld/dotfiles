@@ -1,20 +1,26 @@
 return function(dap)
-  dap.adapters.cppdbg = {
-    id = "cppdbg",
-    type = "executable",
-    command = vim.fn.stdpath("data") .. "/mason/bin/OpenDebugAD7",
+  local mason_path = vim.fn.stdpath("data") .. "/mason"
+  local codelldb = mason_path .. "/bin/codelldb"
+
+  dap.adapters.codelldb = {
+    type = "server",
+    port = "${port}",
+    executable = {
+      command = codelldb,
+      args = { "--port", "${port}" },
+    },
   }
 
   dap.configurations.cpp = {
     {
       name = "Launch file",
-      type = "cppdbg",
+      type = "codelldb",
       request = "launch",
       program = function()
         return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
       end,
       cwd = "${workspaceFolder}",
-      stopAtEntry = false,
+      stopOnEntry = false,
     },
   }
 

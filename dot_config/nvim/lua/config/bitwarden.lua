@@ -1,6 +1,6 @@
 local M = {}
 
-M.item_query = "openai"
+M.item_query = "OpenAI API Key"
 M.session = nil
 M.token_lines = {}
 
