@@ -37,8 +37,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=576
-popupWidth=745
+popupHeight=580
+popupWidth=749
 
 [Containments][2][Applets][3][Configuration][General]
 favorites=preferred://browser,org.kde.dolphin.desktop,org.kde.elisa.desktop,org.kde.konsole.desktop,org.manjaro.pamac.manager.desktop,systemsettings.desktop
@@ -166,6 +166,9 @@ plugin=org.kde.plasma.battery
 [Containments][9][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
+
+[Containments][9][Applets][24][Configuration]
+PreloadWeight=42
 
 [Containments][9][Applets][25]
 immutability=1

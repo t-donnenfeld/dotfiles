@@ -14,15 +14,19 @@ return {
   opts = {
     preset = "helix",
     spec = {
-      { "<leader>f", group = "+find" },
-      { "<leader>e", group = "+explore" },
-      { "<leader>g", group = "+git" },
-      { "<leader>d", group = "+debug" },
-      { "<leader>l", group = "+lsp" },
-      { "<leader>c", group = "+code" },
-      { "<leader>t", group = "+terminal" },
-      { "<leader>s", group = "+split" },
-      { "<leader>b", group = "+buffer" },
+      { "<leader>f",  group = "+find" },
+      { "<leader>e",  group = "+explore" },
+      { "<leader>g",  group = "+git" },
+      { "<leader>d",  group = "+debug" },
+      { "<leader>l",  group = "+lsp" },
+      { "<leader>c",  group = "+code" },
+      { "<leader>cd", group = "+diagnostics" },
+      { "<leader>t",  group = "+terminal" },
+      { "<leader>s",  group = "+split" },
+      { "<leader>b",  group = "+buffer" },
+      { "<leader>w",  group = "+workspace" },
+      { "<leader>v",  group = "+venv" },
+      { "<leader>a",  group = "+avante" },
     }
   }
 }
