@@ -18,7 +18,7 @@ return {
       { "<leader>e",  group = "+explore" },
       { "<leader>g",  group = "+git" },
       { "<leader>d",  group = "+debug" },
-      { "<leader>l",  group = "+lsp" },
+      { "<leader>l",  group = "+LaTeX" },
       { "<leader>c",  group = "+code" },
       { "<leader>cd", group = "+diagnostics" },
       { "<leader>t",  group = "+terminal" },

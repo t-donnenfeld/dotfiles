@@ -65,5 +65,13 @@ return { {
       local ts = require('telescope').load_extension 'emoji'
       vim.keymap.set('n', '<leader>fe', ts.emoji, { desc = '[S]earch [E]moji' })
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {},
+    cmd = "Trouble",
+    keys = {
+      { "<leader>mc", "<cmd>Trouble quickfix<CR>", desc = "Show build errors" },
+    }
   }
 }
