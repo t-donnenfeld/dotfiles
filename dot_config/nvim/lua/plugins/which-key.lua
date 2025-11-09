@@ -27,6 +27,7 @@ return {
       { "<leader>w",  group = "+workspace" },
       { "<leader>v",  group = "+venv" },
       { "<leader>a",  group = "+avante" },
+      { "<leader>q",  group = "+quit" },
     }
   }
 }

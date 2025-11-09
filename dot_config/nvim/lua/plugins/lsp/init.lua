@@ -17,6 +17,7 @@ return {
           "pyright",
           "bashls",
           "ts_ls",
+          "clangd"
         },
         automatic_enable = true,
       })

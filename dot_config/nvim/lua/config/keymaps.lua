@@ -1,7 +1,6 @@
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true, desc = "Buffer" }
 
-
 -- Folds
 vim.opt.foldmethod = "manual"
 vim.opt.foldexpr = ""
