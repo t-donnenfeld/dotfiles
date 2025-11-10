@@ -4,6 +4,9 @@ return {
   build = "make",
   version = false,
   opts = {
+    behaviour = {
+      auto_apply = false,
+    },
     instructions_file = "avante.md",
     provider = "openai",
     providers = {
