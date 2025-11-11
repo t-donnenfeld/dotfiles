@@ -4,7 +4,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     require("image").setup({
-      backend = "kitty", -- or "ueberzug" / "iterm2" / "tycat"
+      backend = "ueberzug",
       integrations = {
         markdown = {
           enabled = true,

@@ -21,21 +21,4 @@ return function(dap)
 
   vim.keymap.set("n", "<leader>dpt", dap_python.test_method, { desc = "Debug Python test method" })
   vim.keymap.set("n", "<leader>dpT", dap_python.test_class, { desc = "Debug Python test class" })
-
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = "python",
-    callback = function()
-      local active_venv = os.getenv("VIRTUAL_ENV") or vim.env.VIRTUAL_ENV
-      local debugpy_exists = vim.fn.filereadable(mason_debugpy) == 1
-
-      local msg = "🐍 Python DAP setup check:\n"
-      msg = msg .. "• dap-python loaded: " .. (dap_python_ok and "✅" or "❌") .. "\n"
-      msg = msg .. "• debugpy adapter: " .. (debugpy_exists and "✅ found" or "⚠️ missing") .. "\n"
-      msg = msg .. "• active venv: " .. (active_venv and ("✅ " .. active_venv) or "⚠️ none") .. "\n"
-
-      vim.schedule(function()
-        vim.notify(msg, vim.log.levels.INFO, { title = "Python DAP Check" })
-      end)
-    end,
-  })
 end

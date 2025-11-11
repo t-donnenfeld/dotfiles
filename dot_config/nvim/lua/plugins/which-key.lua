@@ -18,6 +18,7 @@ return {
       { "<leader>e",  group = "+explore" },
       { "<leader>g",  group = "+git" },
       { "<leader>d",  group = "+debug" },
+      { "<leader>dp", group = "+python" },
       { "<leader>l",  group = "+LaTeX" },
       { "<leader>c",  group = "+code" },
       { "<leader>cd", group = "+diagnostics" },

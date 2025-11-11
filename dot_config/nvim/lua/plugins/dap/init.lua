@@ -15,7 +15,19 @@ return {
     { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "DAP: Toggle Breakpoint" },
     { "<leader>dr", function() require("dap").repl.open() end,         desc = "DAP: Open REPL" },
     { "<leader>dC", function() require("dap").run_to_cursor() end,     desc = "DAP: Run to Cursor" },
-    { "<leader>du", function() require("dapui").toggle() end,          desc = "DAP: Toggle UI" }
+    { "<leader>du", function() require("dapui").toggle() end,          desc = "DAP: Toggle UI" },
+    {
+      "<leader>dr",
+      function()
+        if require("dap").session() then
+          require("dap").terminate()
+        end
+        vim.defer_fn(function()
+          require("dap").run_last()
+        end, 100)
+      end,
+      desc = "DAP: Rerun last configuration"
+    }
   },
   config = function()
     local dap = require("dap")
@@ -30,23 +42,15 @@ return {
       layouts = {
         {
           elements = {
-            { id = "scopes",      size = 0.55 },
-            { id = "stacks",      size = 0.20 },
-            { id = "breakpoints", size = 0.15 },
-            { id = "watches",     size = 0.10 },
+            { id = "scopes",      size = 0.40 },
+            -- { id = "stacks",      size = 0.10 },
+            { id = "breakpoints", size = 0.10 },
+            -- { id = "watches",     size = 0.10 },
+            { id = "console",     size = 0.50 },
           },
           size = 0.40,
           position = "right",
-        },
-        {
-          -- Bottom panel (optional)
-          elements = {
-            "repl",
-            "console",
-          },
-          size = 0.20,
-          position = "bottom",
-        },
+        }
       },
 
       floating = {

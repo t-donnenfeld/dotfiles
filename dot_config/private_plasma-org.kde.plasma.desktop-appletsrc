@@ -37,8 +37,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=584
-popupWidth=753
+popupHeight=588
+popupWidth=757
 
 [Containments][2][Applets][3][Configuration][General]
 favorites=preferred://browser,org.kde.dolphin.desktop,org.kde.elisa.desktop,org.kde.konsole.desktop,org.manjaro.pamac.manager.desktop,systemsettings.desktop

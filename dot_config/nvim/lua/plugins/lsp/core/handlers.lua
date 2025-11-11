@@ -12,8 +12,22 @@ function M.on_attach(client, bufnr)
   map("n", "gi", vim.lsp.buf.implementation, "Go to Implementation")
   map("n", "gr", vim.lsp.buf.references, "List References")
 
+  -- Symbol search
+  map("n", "<leader>cs", vim.lsp.buf.document_symbol, "Document Symbols")
+  map("n", "<leader>cS", vim.lsp.buf.workspace_symbol, "Workspace Symbols")
+  map("n", "<leader>ct", vim.lsp.buf.type_definition, "Go to Type Definition")
+
+  -- Workspace
+
+  map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add Workspace Folder")
+  map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove Workspace Folder")
+  map("n", "<leader>wl", function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, "List Workspace Folders")
+
   -- Code interaction
   map("n", "<leader>cd", vim.lsp.buf.hover, "Hover Documentation")
+  map("n", "<Leader>ch", vim.lsp.buf.signature_help, "Signature Help")
   map("n", "<leader>cr", vim.lsp.buf.rename, "Rename Symbol")
   map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
