@@ -5,6 +5,7 @@ return {
     dependencies = {
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
+      "stevanmilic/nvim-lspimport",
       "hrsh7th/cmp-nvim-lsp",
     },
     event = { "BufReadPre", "BufNewFile" },
@@ -26,6 +27,7 @@ return {
         capabilities = capabilities,
         root_markers = { ".git", "compile_commands.json" },
       })
+      vim.keymap.set("n", "<leader>ci", require("lspimport").import, { noremap = true })
     end,
   },
 }
