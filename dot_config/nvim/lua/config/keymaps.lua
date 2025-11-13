@@ -1,9 +1,18 @@
 local map = vim.keymap.set
+
+function nnoremap(lhs, rhs)
+	vim.keymap.set("n", lhs, rhs, { noremap = true, silent = true })
+end
+
 local opts = { silent = true, noremap = true, desc = "Buffer" }
 
 -- Folds
 vim.opt.foldmethod = "manual"
 vim.opt.foldexpr = ""
+
+-- Navigation
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz")
 
 -- Style
 vim.opt.fillchars = { vert = "│", horiz = "─", eob = " " }
@@ -26,10 +35,10 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-Up>", ":resize -2<CR>", opts)
-map("n", "<C-Down>", ":resize +2<CR>", opts)
-map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+map("n", "<C-Up>", ":resize -4<CR>", opts)
+map("n", "<C-Down>", ":resize +4<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -4<CR>", opts)
+map("n", "<C-Right>", ":vertical resize +4<CR>", opts)
 
 map("n", "<leader>sv", ":vsplit<CR>", { desc = "Vertical split" })
 map("n", "<leader>sh", ":split<CR>", { desc = "Horizontal split" })
@@ -39,17 +48,17 @@ map("n", "<leader>so", ":only<CR>", { desc = "Close other splits" })
 map("n", "<leader>h", ":nohlsearch<CR>", { desc = "Clear highlights" })
 
 -- Terminal
-map('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
-map('t', '<C-h>', [[<Cmd>wincmd h<CR>]], { desc = 'Go to left window' })
-map('t', '<C-j>', [[<Cmd>wincmd j<CR>]], { desc = 'Go to lower window' })
-map('t', '<C-k>', [[<Cmd>wincmd k<CR>]], { desc = 'Go to upper window' })
-map('t', '<C-l>', [[<Cmd>wincmd l<CR>]], { desc = 'Go to right window' })
+map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Go to left window" })
+map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Go to lower window" })
+map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Go to upper window" })
+map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Go to right window" })
 vim.keymap.set("t", "<C-l>", function()
-  vim.api.nvim_feedkeys("clear" .. vim.api.nvim_replace_termcodes("<CR>", true, false, true), "t", false)
+	vim.api.nvim_feedkeys("clear" .. vim.api.nvim_replace_termcodes("<CR>", true, false, true), "t", false)
 end, { desc = "Clear terminal screen" })
 
 -- CWD
 
 vim.keymap.set("n", "<leader>wd", ":cd %:p:h<CR>:pwd<CR>", {
-  desc = "Change CWD to current file's directory",
+	desc = "Change CWD to current file's directory",
 })

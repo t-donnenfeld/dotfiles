@@ -12,8 +12,11 @@ return {
 
     cmp.setup({
       snippet = {
-        expand = function(args) luasnip.lsp_expand(args.body) end,
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
       },
+      performance = { max_view_entries = 25 },
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),

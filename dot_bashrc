@@ -1,10 +1,5 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
 
 #base="#1e1e2e"
 #text="#cdd6f4"
@@ -23,14 +18,20 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias grep='grep --color=auto'
 alias cat='batcat --theme="Catppuccin Mocha" 2>/dev/null || cat'
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+alias cp="cp -i"                          
+alias df='df -h'                          
+alias free='free -m'                      
 alias more=less
 alias l=ls
+alias vim=nvim
+
+# Binds
+
+bind '"\C-f":"tmux-sessionizer\n"'
 
 # PATH additions
-export PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH":"$HOME/.local/scripts/"
 
 # Catppuccin accent for less
 export LESS_TERMCAP_mb=$'\E[01;35m'  # blink

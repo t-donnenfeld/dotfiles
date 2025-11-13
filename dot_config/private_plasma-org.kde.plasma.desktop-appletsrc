@@ -24,9 +24,9 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=65
-popupHeight=454
-popupWidth=564
+PreloadWeight=70
+popupHeight=458
+popupWidth=568
 
 [Containments][2][Applets][21][Configuration][Appearance]
 fontWeight=400
@@ -37,8 +37,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=588
-popupWidth=757
+popupHeight=604
+popupWidth=773
 
 [Containments][2][Applets][3][Configuration][General]
 favorites=preferred://browser,org.kde.dolphin.desktop,org.kde.elisa.desktop,org.kde.konsole.desktop,org.manjaro.pamac.manager.desktop,systemsettings.desktop
@@ -71,7 +71,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=65
+PreloadWeight=75
 SystrayContainmentId=9
 
 [Containments][2][General]
@@ -98,8 +98,8 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=436
-popupWidth=436
+popupHeight=444
+popupWidth=444
 wallpaperplugin=org.kde.image
 
 [Containments][9][Applets][10]
@@ -150,7 +150,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][9][Applets][20][Configuration]
-PreloadWeight=75
+PreloadWeight=80
 
 [Containments][9][Applets][20][Configuration][General]
 migrated=true
@@ -171,7 +171,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=42
+PreloadWeight=47
 
 [Containments][9][Applets][25]
 immutability=1

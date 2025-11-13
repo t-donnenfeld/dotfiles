@@ -8,3 +8,5 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 4
 vim.opt.wrap = false
 vim.opt.cmdheight = 0
+vim.opt.undodir = "/home/theo/.nvim_undodir"
+vim.opt.undofile = true

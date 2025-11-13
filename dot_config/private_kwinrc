@@ -24,6 +24,9 @@ Active=true
 Mode=Constant
 NightTemperature=5000
 
+[Plugins]
+slideEnabled=false
+
 [Tiling]
 padding=4
 
