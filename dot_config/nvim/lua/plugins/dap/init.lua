@@ -50,6 +50,13 @@ return {
           },
           size = 0.40,
           position = "right",
+        },
+        {
+          elements = {
+            "repl",
+          },
+          size = 15,
+          position = "bottom",
         }
       },
 
