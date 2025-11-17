@@ -10,14 +10,16 @@ return {
     vim.g.vimtex_view_method = "zathura"
     vim.g.vimtex_compiler_method = "latexmk"
     vim.g.vimtex_compiler_latexmk = {
-      build_dir = "",
       options = {
-        "-pdf",
-        "-interaction=nonstopmode",
+        "-shell-escape",
+        "-verbose",
+        "-file-line-error",
         "-synctex=1",
-        "-cd"
+        "-interaction=nonstopmode",
+        "-pdf",
       },
     }
+
 
     local map = vim.keymap.set
 
