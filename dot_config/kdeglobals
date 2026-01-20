@@ -118,11 +118,6 @@ ForegroundNormal=198, 208, 245
 ForegroundPositive=166, 209, 137
 ForegroundVisited=202, 158, 230
 
-[DirSelect Dialog]
-DirSelectDialog Size=855,584
-History Items[$e]=file:$HOME/BluetoothDL
-Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xaf\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
-
 [General]
 BrowserApplication=brave-browser.desktop
 ColorSchemeHash=bd8aad1e12e3aff7631a5205bd35a2ec3c59e508
@@ -133,10 +128,8 @@ LookAndFeelPackage=Catppuccin-Frappe-Yellow
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
@@ -145,7 +138,7 @@ Show hidden files=true
 Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
-Sort reversed=false
+Sort reversed=true
 Speedbar Width=175
 View Style=DetailTree
 
