@@ -1,4 +1,4 @@
-vim.opt.number = true
+ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.expandtab = true
@@ -10,3 +10,5 @@ vim.opt.wrap = false
 vim.opt.cmdheight = 0
 vim.opt.undodir = "/home/theo/.nvim_undodir"
 vim.opt.undofile = true
+vim.opt.foldmethod = "manual"
+vim.opt.foldexpr = ""

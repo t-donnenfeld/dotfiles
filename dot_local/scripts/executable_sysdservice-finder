@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# =========================
+# Ensure sudo is ready
+# =========================
+sudo -v
+
+# =========================
+# Service selector
+# =========================
+RAW_SELECTION=$(
+  systemctl list-unit-files --type=service --no-pager \
+    | awk 'NR>1 {print $1}' \
+    | sed 's/\.service$//' \
+    | sed 's/@$/@ (template)/' \
+    | fzf --prompt="Service > "
+)
+
+[[ -z "${RAW_SELECTION:-}" ]] && exit 0
+SERVICE="${RAW_SELECTION/ (template)/}"
+
+# =========================
+# Template instance resolver
+# =========================
+resolve_template_instance() {
+  local template="$1"
+  local instance=""
+
+  # 1️⃣ systemd-discovered instances
+  instance=$(
+    systemctl list-units --type=service --all --no-pager \
+      | awk '{print $1}' \
+      | grep "^${template}.*\.service$" \
+      | sed -E "s/^${template}(.*)\.service$/\1/" \
+      | sort -u \
+      | fzf --prompt="Instance for $template > " \
+      || true
+  )
+  [[ -n "$instance" ]] && { echo "$instance"; return; }
+
+  # 2️⃣ WireGuard: filesystem-backed instances (sudo already validated)
+  if [[ "$template" == "wg-quick@" ]]; then
+    instance=$(
+      sudo find /etc/wireguard -maxdepth 1 -name '*.conf' -printf '%f\n' \
+        | sed 's/\.conf$//' \
+        | sort -u \
+        | fzf --prompt="WireGuard config > " \
+        || true
+    )
+    [[ -n "$instance" ]] && { echo "$instance"; return; }
+  fi
+
+  # 3️⃣ Manual fallback
+  read -rp "Instance name for $template: " instance
+  echo "$instance"
+}
+
+# =========================
+# Resolve unit
+# =========================
+if [[ "$SERVICE" == *@ ]]; then
+  INSTANCE=$(resolve_template_instance "$SERVICE")
+  [[ -z "${INSTANCE:-}" ]] && exit 0
+  UNIT="${SERVICE}${INSTANCE}.service"
+else
+  UNIT="${SERVICE}.service"
+fi
+
+# =========================
+# Detect state
+# =========================
+IS_ACTIVE=$(systemctl is-active "$UNIT" 2>/dev/null || true)
+IS_ENABLED=$(systemctl is-enabled "$UNIT" 2>/dev/null || true)
+
+ACTIONS=()
+
+if [[ "$IS_ACTIVE" == "active" ]]; then
+  ACTIONS+=(stop restart status)
+else
+  ACTIONS+=(start status)
+fi
+
+if [[ "$IS_ENABLED" == "enabled" ]]; then
+  ACTIONS+=(disable)
+else
+  ACTIONS+=(enable)
+fi
+
+ACTION=$(
+  printf "%s\n" "${ACTIONS[@]}" \
+    | fzf --prompt="$(basename "$UNIT") → "
+)
+
+[[ -z "${ACTION:-}" ]] && exit 0
+
+# =========================
+# Execute
+# =========================
+echo "▶ sudo systemctl $ACTION $UNIT"
+sudo systemctl "$ACTION" "$UNIT"
+

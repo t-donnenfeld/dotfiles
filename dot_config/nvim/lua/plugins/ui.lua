@@ -28,7 +28,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = { options = { theme = "catppuccin" } },
+    opts = { options = { theme = "dracula" } },
   },
   {
     "folke/noice.nvim",
@@ -92,5 +92,44 @@ return {
       require("nvim-surround").setup({
       })
     end
+  },
+  {
+    "folke/zen-mode.nvim",
+    keys = {
+      {
+        "<leader>z",
+        function()
+          vim.schedule(function()
+            require("zen-mode").open()
+          end)
+        end,
+        desc = "Zen Mode",
+      },
+      {
+        "<Esc><Esc>",
+        function()
+          local ok, zen = pcall(require, "zen-mode")
+          if ok then
+            zen.close()
+          end
+        end,
+        desc = "Exit Zen Mode",
+      }
+    },
+    opts = {
+      alacritty = {
+        enabled = false,
+        font = "16",
+      },
+      tmux = { enabled = true },
+      window = {
+        backdrop = 0.80,
+        width = function()
+          local cols = vim.o.columns
+          local ratio = cols > 160 and 0.60 or 0.85
+          return math.floor(cols * ratio)
+        end
+      },
+    },
   }
 }

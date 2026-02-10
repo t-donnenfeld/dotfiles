@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+SSH_CONFIG="${HOME}/.ssh/config"
+
+hosts=$(awk '
+  /^Host[[:space:]]+/ {
+    for (i=2; i<=NF; i++) {
+      if ($i !~ /\*/) print $i
+    }
+  }
+' "$SSH_CONFIG")
+
+[ -z "$hosts" ] && exit 1
+
+host=$(echo "$hosts" | fzf --prompt="SSH to > ")
+
+[ -z "$host" ] && exit 0
+
+ssh "$host"
+

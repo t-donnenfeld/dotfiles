@@ -116,6 +116,9 @@ plugin=org.kde.plasma.manage-inputmethod
 immutability=1
 plugin=org.kde.plasma.notifications
 
+[Containments][2][Applets][8][Applets][18][Configuration]
+PreloadWeight=55
+
 [Containments][2][Applets][8][Applets][19]
 immutability=1
 plugin=org.kde.plasma.printmanager
@@ -138,7 +141,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][2][Applets][8][Applets][22][Configuration]
-PreloadWeight=28
+PreloadWeight=6
 
 [Containments][2][Applets][8][Applets][23]
 immutability=1
@@ -152,7 +155,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][8][Applets][24][Configuration]
-PreloadWeight=23
+PreloadWeight=19
 
 [Containments][2][Applets][8][Applets][25]
 immutability=1
@@ -187,6 +190,8 @@ AppletOrder=3;4;5;6;7;8;21
 
 [Containments][24]
 ItemGeometries-1680x1050=
+ItemGeometries-2560x1440=
+ItemGeometries-3840x2160=
 ItemGeometriesHorizontal=
 activityId=a3b5af1f-2b89-4037-b964-9cb61a555310
 formfactor=0

@@ -29,17 +29,11 @@ alias vim=nvim
 
 bind '"\C-f":"tmux-sessionizer\n"'
 bind '"\C-g":"ssh-finder\n"'
+bind '"\C-h":"sysdservice-finder\n"'
 
 # PATH additions
 PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH":"$HOME/.local/scripts/"
-
-# PYENV
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
 
 # Catppuccin accent for less
 export LESS_TERMCAP_mb=$'\E[01;35m'  # blink
@@ -55,3 +49,24 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/theo/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/theo/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/theo/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/theo/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Added by zip-cracker installer
+export PATH="/home/theo/.local/bin:$PATH"
