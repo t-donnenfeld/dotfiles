@@ -21,7 +21,6 @@ Host gici-gpu
 Host gici-orin
   Hostname 158.109.79.150
   User user
-  #Pass gici2025
 Host uab-gpu
   Hostname 158.109.75.52
   User ricse04
