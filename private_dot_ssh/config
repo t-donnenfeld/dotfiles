@@ -1,0 +1,28 @@
+Host cluster
+  Hostname aolin-login.uab.es
+  User ahpc-4
+  Port 54022
+Host remarkable
+  Hostname 10.11.99.1
+  User root
+Host pablo
+  Hostname 185.196.20.127
+  User theo
+Host gici-rpi
+  Hostname 158.109.79.167
+  User raspberry
+Host gici-gpu-3060
+  Hostname 158.109.79.184
+  User tdonnenfeld
+Host gici-gpu
+  Hostname 158.109.79.197
+  User deic
+  Port 169
+Host gici-orin
+  Hostname 158.109.79.150
+  User user
+  #Pass gici2025
+Host uab-gpu
+  Hostname 158.109.75.52
+  User ricse04
+  Port 55022
