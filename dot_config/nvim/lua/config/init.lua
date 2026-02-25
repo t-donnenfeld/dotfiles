@@ -1,5 +1,0 @@
-require("config.options")
-require("config.ui")
-require("config.keymaps")
-require("config.autocmds")
-require("config.bitwarden")
