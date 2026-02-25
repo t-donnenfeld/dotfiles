@@ -5,9 +5,10 @@ Host cluster
 Host remarkable
   Hostname 10.11.99.1
   User root
-Host pablo
+Host palma
   Hostname 185.196.20.127
   User theo
+  Port 55022
 Host gici-rpi
   Hostname 158.109.79.167
   User raspberry
