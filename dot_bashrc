@@ -69,4 +69,5 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # Added by zip-cracker installer
-export PATH="/home/theo/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/build/nvim/bin:$PATH"
