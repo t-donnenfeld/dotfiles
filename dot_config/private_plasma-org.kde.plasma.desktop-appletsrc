@@ -117,7 +117,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][2][Applets][8][Applets][18][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][2][Applets][8][Applets][19]
 immutability=1
@@ -148,14 +148,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2][Applets][8][Applets][23][Configuration]
-PreloadWeight=86
+PreloadWeight=92
 
 [Containments][2][Applets][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][8][Applets][24][Configuration]
-PreloadWeight=5
+PreloadWeight=27
 
 [Containments][2][Applets][8][Applets][25]
 immutability=1
@@ -201,6 +201,10 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][24][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
 [Containments][24][General]
 positions={"1680x1050":[]}
 
@@ -215,4 +219,4 @@ wallpaperplugin=org.kde.image
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/steam.desktop,0,a3b5af1f-2b89-4037-b964-9cb61a555310
+screenMapping=
