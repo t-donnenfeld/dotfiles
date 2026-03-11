@@ -70,4 +70,4 @@ export VISUAL=nvim
 
 # Added by zip-cracker installer
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/build/nvim/bin:$PATH"
+. "$HOME/.cargo/env"

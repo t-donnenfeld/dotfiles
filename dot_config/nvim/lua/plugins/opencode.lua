@@ -31,31 +31,33 @@ return {
         return "cd " .. cwd .. " && opencode --port"
       end
 
+      local snacks_terminal_opts = {
+        win = {
+          position = "right",
+          enter = false,
+          on_win = function(win)
+            require("opencode.terminal").setup(win.win)
+          end,
+        },
+      }
+
       vim.g.opencode_opts = {
         server = {
           start = function()
-            require("snacks.terminal").open(opencode_cmd(), {
-              win = {
-                position = "right",
-                enter = false,
-                on_win = function(win)
-                  require("opencode.terminal").setup(win.win)
-                end,
-              },
-            })
+            require("snacks.terminal").open(opencode_cmd(), snacks_terminal_opts)
           end,
 
           stop = function()
-            require("snacks.terminal").get(opencode_cmd()):close()
+            require("snacks.terminal").get(opencode_cmd(), snacks_terminal_opts):close()
           end,
 
           toggle = function()
-            require("snacks.terminal").toggle(opencode_cmd())
+            require("snacks.terminal").toggle(opencode_cmd(), snacks_terminal_opts)
           end,
         },
 
         lsp = {
-          enabled = true, -- optional experimental LSP integration
+          enabled = true,
         },
       }
 
@@ -85,13 +87,9 @@ return {
         return require("opencode").operator("@this ") .. "_"
       end, { expr = true, desc = "Send line to Opencode" })
 
-      vim.keymap.set("n", "K", function()
-        return require("opencode").command("session.half.page.up")
-      end, { expr = true, desc = "Scroll half page up" })
-
-      vim.keymap.set("n", "J", function()
-        return require("opencode").command("session.half.page.down")
-      end, { expr = true, desc = "Scroll half page up" })
+      vim.keymap.set("t", "<C-c>", function()
+        vim.cmd("stopinsert")
+      end, { desc = "Exit terminal insert mode" })
 
       vim.keymap.set("n", "<leader>ol", function()
         require("opencode").command("session.list")
