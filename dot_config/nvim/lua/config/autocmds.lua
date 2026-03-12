@@ -6,3 +6,21 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+local group = vim.api.nvim_create_augroup("UserPyrightImports", { clear = false })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  pattern = "python",
+  callback = function()
+    local opts = { buffer = true, desc = "Pyright: Add missing imports" }
+    vim.keymap.set("n", "<leader>ia", function()
+      vim.lsp.buf.code_action({
+        context = {
+          only = { "source.addMissingImports", "source.organizeImports" },
+        },
+        apply = true,
+      })
+    end, opts)
+  end,
+})
